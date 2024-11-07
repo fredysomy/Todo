@@ -3,21 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do</title>
     <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div id="main-container">
         <nav>
-            navbar
+            <h2>To Do List</h2>
         </nav>
         <div id="task-container">
             <div class="task">
-                <input type="checkbox">
-                <span>task 1</span>
-                <button>delete</button>
+                <label class="check-box">
+                    <input type="checkbox" value="false">
+                </label>
+                <span class="task-title">Task 1</span>
+                <div class="btn-group">
+                    <button class="delete-btn"><i class="fa-solid fa-trash-can"></i></button> 
+                    <button  class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+            </div>
+            <div class="task">
+                <span class="check-box"></span>
+                <span class="task-title">Task 1</span>
+                <div class="btn-group">
+                    <button class="delete-btn"><i class="fa-solid fa-trash-can"></i></button> 
+                    <button  class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
+            </div>
+            <div class="task">
+                <label class="check-box">
+                    <input type="checkbox" value="false">
+                </label>
+                <span class="task-title">Task 1</span>
+                <div class="btn-group">
+                    <button class="delete-btn"><i class="fa-solid fa-trash-can"></i></button> 
+                    <button  class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                </div>
             </div>
         </div>
     </div>
+    <script src="brapp.js"></script>
 </body>
 </html>

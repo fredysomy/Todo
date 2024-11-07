@@ -1,6 +1,7 @@
 :root {
-    --main-bg: #e3e9ff;
-    --secondary-bg: #af7eeb;
+    --bg-color: #e3e9ff;
+    --primary-color: #af7eeb;
+    --font-color: #929292;
 }
 
 * {
@@ -9,40 +10,107 @@
     margin: 0;
 }
 
-body {
-    background-color: var(--main-bg);
+body{
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+input, button {
+    cursor: pointer;
 }
 
 #main-container {
-	width: 60%;
-	margin: auto;
-	margin-top: 100px;
-	max-width: 575px;
-	min-width: 480px;
-}
-
-nav {
-	background-color: var(--secondary-bg);
-	padding: 1em;
-	color: white;
-	font-size: 1.5rem;
-	font-weight: bold;
-	text-align: center;
-    margin-bottom: 30px;
-}
-
-#task-container {
-    background-color: white;
+    width: 40%;
+    max-width: 490px;
+    min-width: 400px;
+    max-height: 217px;
+    margin: auto;
+    margin-top: 20vh;
     text-align: center;
-}
-
-.task {
-    padding: 1em;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-around;
+    /* background-color: grey; */
 }
 
 nav, #task-container {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow:  0 0 25px rgba(0,0,0,0.1);
 }
+
+/*          $nav            */
+
+nav {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75em 0;
+}
+
+/*          $tasks          */
+
+#task-container {
+    background-color: white;
+    margin-top: 5vh;
+    padding: 1.55em 0;
+}
+
+.task {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+	padding: 0.75em 0;
+	font-size: 1.15rem;
+	font-weight: bold;
+}
+
+.task:hover{
+    /*background-color: rgb(236, 236, 236);*/
+    cursor: pointer;
+    /* box-shadow:   0 0 25px rgba(0,0,0,0.1); */
+}
+
+
+
+.task:hover * {
+    transform: scale(1.2);
+    transition: transform 0.2s;
+}
+
+.delete-btn, .edit-btn {
+	background-color: transparent;
+	border: none;
+	font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 0 0.5em;
+}
+
+.delete-btn i, .edit-btn:hover i {
+    transition: transform 0.1s;
+}
+
+.delete-btn:hover i, .edit-btn:hover i {
+    box-shadow:   0 5px 10px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.delete-btn:active i, .edit-btn:active i {
+    transform: translateY(0px);
+}
+
+.check-box input[type="checkbox"] {
+    /* visibility: hidden; */
+}
+
+.check-box {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: solid var(--font-color) 2px;
+    transition: background-color  0.2s;
+}
+
+.check-box:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.check-box.checked {
+    background-color: var(--primary-color);
+}
+
