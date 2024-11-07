@@ -29,7 +29,10 @@ app.get("/hi", (req, res) => {
   res.send("Hi Saintgits");
 });
 
-app.get("/todo", (req, res) => {
+
+
+
+app.get("/todos", (req, res) => {
   Todo.find()
     .then((todos) => {
       res.json({
@@ -41,6 +44,12 @@ app.get("/todo", (req, res) => {
       console.log(err);
     });
 });
+
+
+
+
+
+
 
 app.post("/createtodo", (req, res) => {
   const todo = new Todo({
@@ -78,6 +87,33 @@ app.put("/updatetodo/:id", (req, res) => {
   });
 });
 
+
+app.delete("/deletetodo/:id", (req, res) => {
+  const id = req.params.id;
+
+  Todo.findByIdAndDelete(id).then(()=>
+    res.json({
+      success: true,
+      message: "Todo deleted successfully",
+    }))
+  })
+
+
+
+  app.get("/todo/:id", (req, res) => {
+    const id = req.params.id;
+  
+    Todo.findById(id)
+        .then((todo) => {
+            res.json({
+            success: true,
+            data: todo,
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    })
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
