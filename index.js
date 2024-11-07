@@ -5,6 +5,7 @@ const Todo = require("./models/todo");
 const app = express();
 
 app.use(express.json());
+app.use(express.static('./public'));
 
 const CON_STRING =
   "mongodb+srv://fredy:fredy.csa2125@cluster0todo.f7lz2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0Todo";
