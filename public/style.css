@@ -39,4 +39,10 @@ nav {
 .task {
     padding: 1em;
     font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav, #task-container {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
